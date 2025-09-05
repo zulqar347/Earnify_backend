@@ -1,4 +1,5 @@
 import os 
+from pathlib import Path
 import dj_database_url
 from .settings import * 
 from .settings import BASE_DIR
@@ -8,6 +9,13 @@ CSRF_TRUSTED_ORIGINS = ['https://'+os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 
 DEBUG = False
 SECRET_KEY = os.environ.get('SECRET_KEY')
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
