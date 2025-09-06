@@ -33,9 +33,9 @@ class UserListCreateView(APIView):
 
 class ProfileListView(APIView):
     permission_classes = [permissions.AllowAny]
-    authentication_classes = []
+    # authentication_classes = []
     def get(self, request):
-        profile = UserProfile.objects.all()#filter(user=request.user)
+        profile = UserProfile.objects.filter(user=request.user)
         serializer = UserProfileSerializer(profile, many=True)
         return Response(serializer.data)
     def post(self, request):
@@ -56,7 +56,7 @@ def watch_ad(request):
 
     # Give reward
     if profile.referral_count <=4:
-        profile.balance +=  1 #profile.referral_count +1
+        profile.balance += profile.referral_count +1
         profile.save()
         
     else:
