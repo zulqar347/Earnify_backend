@@ -56,7 +56,7 @@ def watch_ad(request):
 
     # Give reward
     if profile.referral_count <=4:
-        profile.balance += 1 #profile.referral_count +1
+        profile.balance += F('balance') + 1 #profile.referral_count +1
         
     else:
         profile.balance += 5
