@@ -29,9 +29,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     'https://render-deploy-tutorial-reactjs-code.onrender.com'
-# ]
+CORS_ALLOWED_ORIGINS = [
+    'https://earnify-frontend.onrender.com'
+]
 
 STORAGES = {
     "default":{

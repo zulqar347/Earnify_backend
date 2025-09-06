@@ -31,7 +31,7 @@ class UserProfile(models.Model):
         super().save(*args, **kwargs)
 
     def referral_link(self):
-        return f"http://localhost:5173/signup?ref={self.referall_code}"
+        return f"https://earnify-frontend.onrender.com/signup?ref={self.referall_code}"
 
     def __str__(self):
         return self.user.username
